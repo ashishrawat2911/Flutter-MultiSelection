@@ -1,4 +1,6 @@
-# flutter_multiselection_list
+# Flutter-MultiSelection
 
 ##Screenshot
-[![](https://raw.githubusercontent.com/ashishrawat2911/Flutter-MultiSelection/master/screenshot/multiselection.gif)]
+
+<img src="https://raw.githubusercontent.com/ashishrawat2911/Flutter-MultiSelection/master/screenshot/multiselection.gif" height=450 width=270>
+
