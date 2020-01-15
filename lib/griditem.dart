@@ -4,10 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_multiselection_list/home_page.dart';
 
 class GridItem extends StatefulWidget {
+  final Key key;
   final Item item;
   final ValueChanged<bool> isSelected;
 
-  GridItem(this.item, this.isSelected);
+  GridItem({this.item, this.isSelected, this.key});
 
   @override
   _GridItemState createState() => _GridItemState();
@@ -27,7 +28,7 @@ class _GridItemState extends State<GridItem> {
       },
       child: Stack(
         children: <Widget>[
-          Image.network(
+          Image.asset(
             widget.item.imageUrl,
             color: Colors.black.withOpacity(isSelected ? 0.9 : 0),
             colorBlendMode: BlendMode.color,

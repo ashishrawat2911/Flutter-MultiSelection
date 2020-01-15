@@ -19,66 +19,26 @@ class _HomePageState extends State<HomePage> {
   loadList() {
     itemList = List();
     selectedList = List();
-    itemList.add(Item(
-        "https://i.pinimg.com/originals/d2/97/6b/d2976b3baeea771eff0a275e9b2ca2e0.png",
-        1));
-    itemList.add(Item(
-        "https://i.pinimg.com/originals/d2/97/6b/d2976b3baeea771eff0a275e9b2ca2e0.png",
-        2));
-    itemList.add(Item(
-        "https://i.pinimg.com/originals/d2/97/6b/d2976b3baeea771eff0a275e9b2ca2e0.png",
-        3));
-    itemList.add(Item(
-        "https://i.pinimg.com/originals/d2/97/6b/d2976b3baeea771eff0a275e9b2ca2e0.png",
-        4));
-    itemList.add(Item(
-        "https://i.pinimg.com/originals/d2/97/6b/d2976b3baeea771eff0a275e9b2ca2e0.png",
-        5));
-    itemList.add(Item(
-        "https://i.pinimg.com/originals/d2/97/6b/d2976b3baeea771eff0a275e9b2ca2e0.png",
-        6));
-    itemList.add(Item(
-        "https://i.pinimg.com/originals/d2/97/6b/d2976b3baeea771eff0a275e9b2ca2e0.png",
-        7));
-    itemList.add(Item(
-        "https://i.pinimg.com/originals/d2/97/6b/d2976b3baeea771eff0a275e9b2ca2e0.png",
-        8));
-    itemList.add(Item(
-        "https://i.pinimg.com/originals/d2/97/6b/d2976b3baeea771eff0a275e9b2ca2e0.png",
-        9));
-    itemList.add(Item(
-        "https://i.pinimg.com/originals/d2/97/6b/d2976b3baeea771eff0a275e9b2ca2e0.png",
-        10));
-    itemList.add(Item(
-        "https://i.pinimg.com/originals/d2/97/6b/d2976b3baeea771eff0a275e9b2ca2e0.png",
-        11));
-    itemList.add(Item(
-        "https://i.pinimg.com/originals/d2/97/6b/d2976b3baeea771eff0a275e9b2ca2e0.png",
-        12));
-    itemList.add(Item(
-        "https://i.pinimg.com/originals/d2/97/6b/d2976b3baeea771eff0a275e9b2ca2e0.png",
-        13));
-    itemList.add(Item(
-        "https://i.pinimg.com/originals/d2/97/6b/d2976b3baeea771eff0a275e9b2ca2e0.png",
-        14));
-    itemList.add(Item(
-        "https://i.pinimg.com/originals/d2/97/6b/d2976b3baeea771eff0a275e9b2ca2e0.png",
-        15));
-    itemList.add(Item(
-        "https://i.pinimg.com/originals/d2/97/6b/d2976b3baeea771eff0a275e9b2ca2e0.png",
-        16));
-    itemList.add(Item(
-        "https://i.pinimg.com/originals/d2/97/6b/d2976b3baeea771eff0a275e9b2ca2e0.png",
-        17));
-    itemList.add(Item(
-        "https://i.pinimg.com/originals/d2/97/6b/d2976b3baeea771eff0a275e9b2ca2e0.png",
-        18));
-    itemList.add(Item(
-        "https://i.pinimg.com/originals/d2/97/6b/d2976b3baeea771eff0a275e9b2ca2e0.png",
-        19));
-    itemList.add(Item(
-        "https://i.pinimg.com/originals/d2/97/6b/d2976b3baeea771eff0a275e9b2ca2e0.png",
-        20));
+    itemList.add(Item("assets/pringles.png", 1));
+    itemList.add(Item("assets/pringles.png", 2));
+    itemList.add(Item("assets/pringles.png", 3));
+    itemList.add(Item("assets/pringles.png", 4));
+    itemList.add(Item("assets/pringles.png", 5));
+    itemList.add(Item("assets/pringles.png", 6));
+    itemList.add(Item("assets/pringles.png", 7));
+    itemList.add(Item("assets/pringles.png", 8));
+    itemList.add(Item("assets/pringles.png", 9));
+    itemList.add(Item("assets/pringles.png", 10));
+    itemList.add(Item("assets/pringles.png", 11));
+    itemList.add(Item("assets/pringles.png", 12));
+    itemList.add(Item("assets/pringles.png", 13));
+    itemList.add(Item("assets/pringles.png", 14));
+    itemList.add(Item("assets/pringles.png", 15));
+    itemList.add(Item("assets/pringles.png", 16));
+    itemList.add(Item("assets/pringles.png", 17));
+    itemList.add(Item("assets/pringles.png", 18));
+    itemList.add(Item("assets/pringles.png", 19));
+    itemList.add(Item("assets/pringles.png", 20));
   }
 
   @override
@@ -93,24 +53,19 @@ class _HomePageState extends State<HomePage> {
               crossAxisSpacing: 2,
               mainAxisSpacing: 2),
           itemBuilder: (context, index) {
-            bool value = false;
-            return InkWell(
-              onTap: () {
-                setState(() {
-                  value = !value;
-                });
-              },
-              child: GridItem(itemList[index], (bool value) {
-                setState(() {
-                  if (value) {
-                    selectedList.add(itemList[index]);
-                  } else {
-                    selectedList.remove(itemList[index]);
-                  }
-                });
-                print("$index : $value");
-              }),
-            );
+            return GridItem(
+                item: itemList[index],
+                isSelected: (bool value) {
+                  setState(() {
+                    if (value) {
+                      selectedList.add(itemList[index]);
+                    } else {
+                      selectedList.remove(itemList[index]);
+                    }
+                  });
+                  print("$index : $value");
+                },
+                key: Key(itemList[index].rank.toString()));
           }),
     );
   }
@@ -123,7 +78,7 @@ class _HomePageState extends State<HomePage> {
       actions: <Widget>[
         selectedList.length < 1
             ? Container()
-            : GestureDetector(
+            : InkWell(
                 onTap: () {
                   setState(() {
                     for (int i = 0; i < selectedList.length; i++) {
@@ -132,7 +87,10 @@ class _HomePageState extends State<HomePage> {
                     selectedList = List();
                   });
                 },
-                child: Icon(Icons.delete))
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Icon(Icons.delete),
+                ))
       ],
     );
   }
